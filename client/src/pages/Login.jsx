@@ -91,12 +91,23 @@ const Login = ({ setIsAuthenticated }) => {
           </button>
         </form>
 
-        <p className="text-white/90 text-center mt-6">
-          Don't have an account?{' '}
-          <Link to="/signup" className="text-white font-semibold hover:underline">
+        <div className="text-center mt-6 space-y-4">
+          <Link
+            to="/"
+            className="inline-block text-white/80 hover:text-white text-sm transition duration-300"
+          >
+            ← Back to Home
+          </Link>
+          <p className="text-white/90">
+            Don't have an account?
+          </p>
+          <Link
+            to="/signup"
+            className="inline-block bg-transparent border-2 border-white text-white font-semibold py-2 px-6 rounded-lg hover:bg-white/10 transition duration-300"
+          >
             Sign Up
           </Link>
-        </p>
+        </div>
       </div>
     </div>
   )

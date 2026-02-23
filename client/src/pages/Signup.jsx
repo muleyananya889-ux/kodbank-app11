@@ -127,12 +127,23 @@ const Signup = () => {
           </button>
         </form>
 
-        <p className="text-white/90 text-center mt-6">
-          Already have an account?{' '}
-          <Link to="/login" className="text-white font-semibold hover:underline">
+        <div className="text-center mt-6 space-y-4">
+          <Link
+            to="/"
+            className="inline-block text-white/80 hover:text-white text-sm transition duration-300"
+          >
+            ← Back to Home
+          </Link>
+          <p className="text-white/90">
+            Already have an account?
+          </p>
+          <Link
+            to="/login"
+            className="inline-block bg-transparent border-2 border-white text-white font-semibold py-2 px-6 rounded-lg hover:bg-white/10 transition duration-300"
+          >
             Sign In
           </Link>
-        </p>
+        </div>
       </div>
     </div>
   )
