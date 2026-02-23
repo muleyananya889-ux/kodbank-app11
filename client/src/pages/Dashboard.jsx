@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { api } from '../api'
 
 const Dashboard = () => {
   const [balance, setBalance] = useState(0)
@@ -20,7 +20,7 @@ const Dashboard = () => {
   const fetchBalance = async () => {
     try {
       const token = localStorage.getItem('token')
-      const response = await axios.get('http://localhost:5000/api/balance', {
+      const response = await api.get('/api/balance', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -39,7 +39,7 @@ const Dashboard = () => {
 
     try {
       const token = localStorage.getItem('token')
-      await axios.post('http://localhost:5000/api/transfer', {
+      await api.post('/api/transfer', {
         receiverEmail: transferData.receiverEmail,
         amount: parseFloat(transferData.amount)
       }, {

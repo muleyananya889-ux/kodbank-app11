@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { api } from '../api'
 
 const Login = ({ setIsAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ const Login = ({ setIsAuthenticated }) => {
     setLoading(true)
 
     try {
-      const response = await axios.post('http://localhost:5000/api/login', {
+      const response = await api.post('/api/login', {
         email: formData.email,
         password: formData.password
       })
