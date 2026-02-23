@@ -1,19 +1,25 @@
 {
   "version": 2,
-  "name": "kodbank-app",
+  "name": "kodbank-app11",
   "builds": [
     {
       "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
+        "buildCommand": "npm run vercel-build",
         "distDir": "dist"
       }
     }
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "/api/$1",
+      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    },
+    {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/client/index.html"
     }
   ]
 }
